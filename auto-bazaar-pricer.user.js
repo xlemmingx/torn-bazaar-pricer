@@ -429,7 +429,7 @@ $(() => {
                  */
                 success: function (data) {
                     var {bazaar, itemmarket} = data,
-                        allPrices = _.without(_.concat(itemmarket, bazaar.splice(0,discardLowestBazaar)), null),
+                        allPrices = _.without(_.concat(itemmarket, bazaar.splice(0,options.discardLowestBazaar.value)), null),
                         cheapestItem = _.min(_.toArray(_.mapValues(allPrices, function (value) {
                             return value.cost;
                         })));
